@@ -17,7 +17,7 @@ jobs :
         run : echo "hello from github action"
 
       - name : print working directory 
-        run : echo  "${{environment}} "
+        run : echo  "${{ inputs.environment }} "
 
       - name : print host related details 
         run : hostnamectl 
