@@ -1,8 +1,10 @@
 name : first workflow 
 on :
+  workflow_dispatch :
   schedule : 
   - cron : "0 9 * * *"
   push : 
+  pull_request : 
 jobs :
   hello :
     runs-on : ubuntu-latest
