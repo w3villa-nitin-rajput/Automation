@@ -23,13 +23,13 @@ jobs :
     runs-on : ubuntu-latest
     steps :
       - name : say-hello
-        run : echo " {{ inputs.branch }}"
+        run : echo " ${{ inputs.branch }}"
 
       - name : print working directory 
         run : echo  "${{ inputs.environment }} "
 
       - name : print host related details 
-        run : echo "{{ inputs.deployed_by }}"
+        run : echo "${{ inputs.deployed_by }}"
 
       - name : print os related details
         run : cat /etc/os-release 
