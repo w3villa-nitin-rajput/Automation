@@ -15,7 +15,7 @@ jobs :
         run : hostnamectl 
 
       - name : print os related details
-        run : cat os/etc/os-release 
+        run : cat /etc/os-release 
 
 
     
