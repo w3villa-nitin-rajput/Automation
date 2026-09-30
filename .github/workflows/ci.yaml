@@ -1,6 +1,8 @@
 name : first workflow 
 on :
-  push :
+  schedule : 
+  - cron : "0 9 * * *"
+
 jobs :
   hello :
     runs-on : ubuntu-latest
