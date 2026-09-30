@@ -1,9 +1,13 @@
 name : first workflow 
 on :
   workflow_dispatch :
+    inputs :
+      environment :
+        description : " enter environment name "
+        required : true
+        default : "staging "
   schedule : 
-  - cron : "0 9 * * *"
-  push : 
+    - cron : "0 9 * * *"
   pull_request : 
 jobs :
   hello :
@@ -13,7 +17,7 @@ jobs :
         run : echo "hello from github action"
 
       - name : print working directory 
-        run : pwd
+        run : echo " ${environment} "
 
       - name : print host related details 
         run : hostnamectl 
