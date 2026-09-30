@@ -6,6 +6,15 @@ on :
         description : " enter environment name "
         required : true
         default : "staging "
+      branch :
+        desciption : "enter branch name "
+        required : true
+        default : "main"
+      deployed_by :
+        description : "enter name of the person who deployed "
+        required : true
+        default : "devops"
+        
   schedule : 
     - cron : "0 9 * * *"
   pull_request : 
@@ -14,13 +23,13 @@ jobs :
     runs-on : ubuntu-latest
     steps :
       - name : say-hello
-        run : echo "hello from github action"
+        run : echo " {{ inputs.branch }}"
 
       - name : print working directory 
         run : echo  "${{ inputs.environment }} "
 
       - name : print host related details 
-        run : hostnamectl 
+        run : echo "{{ inputs.deployed_by }}"
 
       - name : print os related details
         run : cat /etc/os-release 
