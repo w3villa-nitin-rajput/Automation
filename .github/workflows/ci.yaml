@@ -14,5 +14,8 @@ jobs :
       - name : print host related details 
         run : hostnamectl 
 
+      - name : print os related details
+        run : cat os/etc/os-release 
+
 
     
