@@ -3,7 +3,7 @@ on :
   push :
 jobs :
   hello :
-    runs-on : ubuntu_latest
+    runs-on : ubuntu-latest
     steps :
       - name : say-hello
         run : echo "hello from github action"
